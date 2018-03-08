@@ -6,12 +6,23 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="div1">
-        <SketchPicker />;
+      <div className="div1" style={{backgroundColor: this.props.color}}></div> 
+        <SketchPicker onChange={(color) => this.props.changeColor(color.hex)} />;
         <div className="circle"></div>
-      </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    color: state.color
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    changeColor: (color) => dispatch(changeColor(color))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
