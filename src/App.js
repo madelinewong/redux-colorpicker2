@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { SketchPicker } from 'react-color';
 import './App.css';
+import { changeColor } from './store.js';
+import { connect } from "react-redux";
 // import initalState from './counter/actions';
 
 class App extends Component {
   render() {
     return (
+      <div>
       <div className="div1" style={{backgroundColor: this.props.color}}></div> 
-        <SketchPicker onChange={(color) => this.props.changeColor(color.hex)} />;
+        <SketchPicker onChange={(color) => this.props.changeColor(color.hex) } />
         <div className="circle"></div>
+        </div>
     );
   }
 }

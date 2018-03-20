@@ -1,5 +1,21 @@
 import { createStore } from 'redux';
 
+//types
+export const CHANGE_COLOR = 'CHANGE_COLOR';
+
+//actions
+
+export const changeColor = (color) => ({
+    type: CHANGE_COLOR,
+    payload: {
+        value: color
+    }
+});
+
+//inital state
+const initalState = {
+    color: "color"
+};
 //reducer
 const reducer = (state=initalState, action) => {
     console.log(action);

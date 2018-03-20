@@ -12,3 +12,4 @@ export const changeColor = (color) => ({
 const initalState = {
     color: "color"
 };
+
